@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Populate formData with sample data
             const formData = {
-				addressLine1: document.getElementById('addressLine1').value,
-				postcode: document.getElementById('postcode').value,
-				fullName: document.getElementById('fullName').value,
-				vehicleRegistrationNumber: document.getElementById('vehicleRegistrationNumber').value,
-				emailAddress: document.getElementById('emailAddress').value
+				addressLine1: "hardcode1",
+				postcode: "hardcode2",
+				fullName: "hardcode3",
+				vehicleRegistrationNumber: "hardcode4",
+				emailAddress: "hardcode5@outlook.com"
 			};
 			
 
