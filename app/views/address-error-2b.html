@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Address not suitable – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Our service found that you do not have suitable parking
+      </h1>
+
+      <p>
+        We found that the parking on your street is unsuitable. This could be because:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>there is not free legal parking on your street</li>
+        <li>installing an electric vehicle charging port would distrupt the flow of vehicles or pedestrians</li>
+        
+      </ul>
+
+      <p>
+        Read more <a href="/path/of/page">about this topic</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

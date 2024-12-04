@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Check if you are able to apply for an electric vehicle charging port</li>
+        <li>Apply for an electrical vehicle charging port</li>
+        
+      </ul>
+
+      <p>This application takes around 5 minutes.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "your-address",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Successful applicants:
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Are the registered owner of an electric vehicle</li>
+        <li>Live in England, Scotland, Wales or Northern Ireland</li>
+        <li>Have ample appropriate parking space near their address</li>
+        
+      </ul>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with appropriate parking
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          By suitable, we mean legal street parking which is available near to your house and does not effect the safety or flow of vehicles.
+        </div>
+      </details>
+
+
+      <p>
+        You can also <a href="#">register by post</a>.
+      </p>
+
+      <p>
+        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+      </p>
+
+      <p>
+        You can’t register for this service if you’re in the UK illegally.
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+     
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
