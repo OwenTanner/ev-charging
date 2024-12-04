@@ -17,7 +17,10 @@
 /home/vagrant/Documents/Prototypes/sdlp-proto-discovery/EvChargingApp/obj/Debug/net8.0/EvChargingApp.csproj.CoreCompileInputs.cache
 /home/vagrant/Documents/Prototypes/sdlp-proto-discovery/EvChargingApp/obj/Debug/net8.0/EvChargingApp.MvcApplicationPartsAssemblyInfo.cs
 /home/vagrant/Documents/Prototypes/sdlp-proto-discovery/EvChargingApp/obj/Debug/net8.0/EvChargingApp.MvcApplicationPartsAssemblyInfo.cache
+<<<<<<< HEAD
 /home/vagrant/Documents/Prototypes/sdlp-proto-discovery/EvChargingApp/obj/Debug/net8.0/EvChargingApp.sourcelink.json
+=======
+>>>>>>> 5fe7b995f7777b9ec51d740f0e36e194ea5dcaee
 /home/vagrant/Documents/Prototypes/sdlp-proto-discovery/EvChargingApp/obj/Debug/net8.0/staticwebassets.build.json
 /home/vagrant/Documents/Prototypes/sdlp-proto-discovery/EvChargingApp/obj/Debug/net8.0/staticwebassets.development.json
 /home/vagrant/Documents/Prototypes/sdlp-proto-discovery/EvChargingApp/obj/Debug/net8.0/staticwebassets/msbuild.EvChargingApp.Microsoft.AspNetCore.StaticWebAssets.props

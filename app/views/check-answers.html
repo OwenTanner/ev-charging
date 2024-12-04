@@ -20,18 +20,62 @@
 
       {{ govukSummaryList({
         rows: [
-          {
-            key: {
-              text: "Address Line 1"
-            },
-            value: {text: data['addressLine1']},
-            actions: {
-              items: [
-                {
-                  href: "/your-address",
-                  text: "Change",
-                  visuallyHiddenText: "What is your address?"
-                }
+        {
+          key: {
+            text: "Address Line 1"
+          },
+          value: {text: data['addressLine1']},
+          actions: {
+            items: [
+              {
+                href: "/your-address",
+                text: "Change",
+                visuallyHiddenText: "What is your address?"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Address Line 2"
+          },
+          value: {text: data['addressLine2']},
+          actions: {
+            items: [
+              {
+                href: "/your-address",
+                text: "Change",
+                visuallyHiddenText: "What is your address?"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Town or City"
+          },
+          value: {text: data['addressTown']},
+          actions: {
+            items: [
+            {
+              href: "/your-address",
+              text: "Change",
+              visuallyHiddenText: "What is your address?"
+            }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Country"
+          },
+          value: {text: data['addressCountry']},
+          actions: {
+            items: [
+            {
+              href: "/your-address",
+              text: "Change",
+              visuallyHiddenText: "What is your address?"}
               ]
             }
           },
@@ -42,12 +86,11 @@
             value: {text: data['addressPostcode']},
             actions: {
               items: [
-                {
-                  href: "/your-address",
-                  text: "Change",
-                  visuallyHiddenText: "What is your address?"
-                }
-              ]
+              {
+                href: "/your-address",
+                text: "Change",
+                visuallyHiddenText: "What is your address?"}
+                ]
             }
           },
           {
@@ -57,11 +100,11 @@
             value: {text: data['fullName']},
             actions: {
               items: [
-                {
-                  href: "/your-name",
-                  text: "Change",
-                  visuallyHiddenText: "What is your full name?"
-                }
+              {
+                href: "/your-name",
+                text: "Change",
+                visuallyHiddenText: "What is your full name?"
+              }
               ]
             }
           },
@@ -72,15 +115,30 @@
             value: {text: data['vehicleRegistrationNumber']},
             actions: {
               items: [
-                {
-                  href: "/your-vrn",
-                  text: "Change",
-                  visuallyHiddenText: "What is your vehicle registration number?"
-                }
+              {
+                href: "/your-vrn",
+                text: "Change",
+                visuallyHiddenText: "What is your vehicle registration number?"
+              }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email Address"
+            },
+            value: {text: data['email']},
+            actions: {
+              items: [
+              {
+                href: "/your-email-address",
+                text: "Change",
+                visuallyHiddenText: "What is your email address?"
+              }
               ]
             }
           }
-        ]
+          ]
       }) }}
 
       <h2 class="govuk-heading-m">
