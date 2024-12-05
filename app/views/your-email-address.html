@@ -20,22 +20,47 @@
         Enter your email address
       </h1>
 
-      <form class="form" action="/check-answers" method="post">
+      <!-- Error message placeholder -->
+      <div id="error-message" class="govuk-error-summary" hidden>
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <ul class="govuk-error-summary__list">
+          <li>
+            <a href="#email">Enter your email address</a>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form" id="emailForm" action="/check-answers" method="post">
 
         <p>
-          <div class="govuk-form-group">
+          <div class="govuk-form-group" id="email-container">
             <label class="govuk-label" for="email">
               Email address
             </label>
             <div id="email-hint" class="govuk-hint">
               We’ll only use this to send you a receipt
             </div>
-            <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+            <!-- Inline error message -->
+            <span class="govuk-error-message" id="email-error" style="display: none;"></span>
+            <input
+              class="govuk-input"
+              id="email"
+              name="email"
+              type="email"
+              spellcheck="false"
+              aria-describedby="email-hint"
+              autocomplete="email"
+              data-validate="true"
+              data-error-message="Enter your email address"
+            >
           </div>
         </p>
 
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          id: "emailSubmitButton"
         }) }}
 
       </form>
@@ -43,4 +68,8 @@
     </div>
   </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/validation.js"></script>
 {% endblock %}

@@ -25,3 +25,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const emailForm = document.getElementById('emailForm');
+    const emailInput = document.getElementById('email');
+
+    if (emailForm) {
+        emailForm.addEventListener('submit', (event) => {
+            let isValid = true;
+
+            // Clear previous errors
+            const errorMessage = document.getElementById('email-error');
+            const errorSummary = document.getElementById('error-message');
+            const emailContainer = document.getElementById('email-container');
+
+            errorMessage.style.display = 'none';
+            errorSummary.hidden = true;
+            emailContainer.classList.remove('govuk-form-group--error');
+
+            // Validate the email input
+            if (emailInput.value.trim() === '') {
+                isValid = false;
+
+                // Show inline error message
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Enter your email address';
+
+                // Highlight the field with an error
+                emailContainer.classList.add('govuk-form-group--error');
+
+                // Show error summary
+                errorSummary.hidden = false;
+            }
+
+            // Prevent form submission if invalid
+            if (!isValid) {
+                event.preventDefault();
+                emailInput.focus();
+            }
+        });
+    }
+});
+
