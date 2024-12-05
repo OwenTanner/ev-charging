@@ -20,7 +20,15 @@
         Your address
       </h1>
 
-      <form class="form" action="/address-route" method="post">
+      <!-- Error message summary -->
+      <div id="error-summary" class="govuk-error-summary" hidden>
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <ul id="error-summary-list" class="govuk-error-summary__list"></ul>
+      </div>
+
+      <form class="form" id="addressForm" action="/your-name" method="post">
 
         <p>
           <fieldset class="govuk-fieldset">
@@ -29,44 +37,56 @@
                 What is your address?
               </h1>
             </legend>
-            <div class="govuk-form-group">
+
+            <!-- Address Line 1 -->
+            <div class="govuk-form-group" id="address-line-1-container">
               <label class="govuk-label" for="address-line-1">
                 Address line 1
               </label>
-              <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+              <span class="govuk-error-message" id="address-line-1-error" style="display: none;"></span>
+              <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1" data-validate="true" data-error-message="Enter your address line 1">
             </div>
-            <div class="govuk-form-group">
+
+            <!-- Address Line 2 (Optional) -->
+            <div class="govuk-form-group" id="address-line-2-container">
               <label class="govuk-label" for="address-line-2">
                 Address line 2 (optional)
               </label>
               <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
             </div>
-            <div class="govuk-form-group">
+
+            <!-- Town or City (Optional) -->
+            <div class="govuk-form-group" id="address-town-container">
               <label class="govuk-label" for="address-town">
-                Town or city
+                Town or city (optional)
               </label>
               <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
             </div>
-            <div class="govuk-form-group">
+
+            <!-- Country -->
+            <div class="govuk-form-group" id="address-country-container">
               <label class="govuk-label" for="address-country">
                 Country
               </label>
-              <div id="country-hint" class="govuk-hint">
-                Must be England, Wales, Scotland or Northern Ireland
-              </div>
-              <input class="govuk-input govuk-!-width-two-thirds" id="address-country" name="addressCountry" type="text">
+              <span class="govuk-error-message" id="address-country-error" style="display: none;"></span>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-country" name="addressCountry" type="text" data-validate="true" data-error-message="Must be England, Wales, Scotland, or Northern Ireland">
             </div>
-            <div class="govuk-form-group">
+
+            <!-- Postcode -->
+            <div class="govuk-form-group" id="address-postcode-container">
               <label class="govuk-label" for="address-postcode">
                 Postcode
               </label>
-              <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code" style="text-transform: uppercase;">
+              <span class="govuk-error-message" id="address-postcode-error" style="display: none;"></span>
+              <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code" style="text-transform: uppercase;" data-validate="true" data-error-message="Enter your postcode">
             </div>
+
           </fieldset>
         </p>
 
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          id: "addressSubmitButton"
         }) }}
 
       </form>
@@ -74,4 +94,8 @@
     </div>
   </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/validation.js"></script>
 {% endblock %}

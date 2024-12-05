@@ -6,22 +6,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// Run this code when a form is submitted to 'parking-answer'
-router.post('/address-route', function (req, res) {
 
-  // Make a variable and give it the value from 'how-many-balls'
-  var country = req.session.data['addressCountry']
-
-  // Check whether the variable matches a condition
-  if (!["England", "Scotland", "Northern Ireland", "Wales"].includes(country)){
-    // Send user to next page
-    res.redirect('/address-error-2a')
-  } else {
-    // Send user to ineligible page
-    res.redirect('/your-name')
-  }
-
-})
 
 router.post('/ev-answer', function (req, res) {
 

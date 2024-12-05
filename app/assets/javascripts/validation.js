@@ -114,4 +114,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const addressForm = document.getElementById('addressForm');
+    const fields = [
+        {
+            id: 'address-line-1',
+            mandatory: true,
+            errorMessage: 'Enter your address line 1'
+        },
+        {
+            id: 'address-country',
+            mandatory: true,
+            errorMessage: 'Country has to be England, Wales, Scotland, or Northern Ireland for this service',
+            validate: (value) => ['england', 'wales', 'scotland', 'northern ireland'].includes(value.trim().toLowerCase())
+        },
+        {
+            id: 'address-postcode',
+            mandatory: true,
+            errorMessage: 'Enter your postcode'
+        }
+    ];
+
+    if (addressForm) {
+        addressForm.addEventListener('submit', (event) => {
+            let isValid = true;
+
+            // Clear previous errors
+            const errorSummary = document.getElementById('error-summary');
+            const errorSummaryList = document.getElementById('error-summary-list');
+            errorSummaryList.innerHTML = '';
+            errorSummary.hidden = true;
+
+            fields.forEach(({ id, mandatory, errorMessage, validate }) => {
+                const input = document.getElementById(id);
+                const errorElement = document.getElementById(`${id}-error`);
+                const container = document.getElementById(`${id}-container`);
+                const value = input.value.trim();
+
+                // Reset error display
+                errorElement.style.display = 'none';
+                errorElement.textContent = '';
+                container.classList.remove('govuk-form-group--error');
+
+                // Validation
+                if ((mandatory && value === '') || (validate && !validate(value))) {
+                    isValid = false;
+
+                    // Inline error
+                    errorElement.style.display = 'block';
+                    errorElement.textContent = errorMessage;
+
+                    // Container error
+                    container.classList.add('govuk-form-group--error');
+
+                    // Add to error summary
+                    const errorItem = document.createElement('li');
+                    const errorLink = document.createElement('a');
+                    errorLink.href = `#${id}`;
+                    errorLink.textContent = errorMessage;
+                    errorItem.appendChild(errorLink);
+                    errorSummaryList.appendChild(errorItem);
+                }
+            });
+
+            // Show error summary if invalid
+            if (!isValid) {
+                errorSummary.hidden = false;
+                event.preventDefault();
+            }
+        });
+    }
+});
+
+
 
