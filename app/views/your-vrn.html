@@ -16,22 +16,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     
+      <form class="form" action="/ev-answer" method="post" id="vrnForm">
 
-      <form class="form" action="/ev-answer" method="post">
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-
-        <div class="govuk-form-group">
+        <div class="govuk-form-group" id="vehicleRegistrationNumber-container">
           <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--l" for="event-name">
+            <label class="govuk-label govuk-label--l" for="vehicleRegistrationNumber">
               What is your vehicle registration number?
             </label>
           </h1>
-          <input class="govuk-input input-upper" id="vehicleRegistrationNumber" name="vehicleRegistrationNumber" type="text" style="text-transform: uppercase;">
+          <span class="govuk-error-message" id="vehicleRegistrationNumber-error" style="display: none;"></span>
+          <input
+            class="govuk-input input-upper"
+            id="vehicleRegistrationNumber"
+            name="vehicleRegistrationNumber"
+            type="text"
+            data-validate="true"
+            data-error-message="Enter your vehicle registration number"
+            style="text-transform: uppercase;"
+          >
         </div>
+
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          id: "vrnSubmitButton"
         }) }}
 
       </form>

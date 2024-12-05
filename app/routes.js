@@ -31,10 +31,10 @@ router.post('/ev-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (regNo == "ABC"){
       // Send user to next page
-      res.redirect('/your-email-address')
+      res.redirect('/deniedev')
     } else {
       // Send user to ineligible page
-      res.redirect('/deniedev')
+      res.redirect('/your-email-address')
     }
   
   })

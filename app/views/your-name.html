@@ -20,7 +20,19 @@
         Enter your full name
       </h1>
 
-      <form class="form" action="/your-vrn" method="post">
+      <!-- Error Message Placeholder -->
+      <div id="error-message" class="govuk-error-summary" hidden>
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <ul class="govuk-error-summary__list">
+          <li>
+            <a href="#full-name">Full name is required</a>
+          </li>
+        </ul>
+      </div>
+
+      <form id="your-name-form" class="form" action="/your-vrn" method="post">
 
         <p>
           <div class="govuk-form-group">
@@ -31,13 +43,15 @@
           </div>
         </p>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <button id="continue-button" class="govuk-button" type="button">Continue</button>
 
       </form>
 
     </div>
   </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/validation.js"></script>
 {% endblock %}
