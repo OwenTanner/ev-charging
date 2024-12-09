@@ -23,3 +23,38 @@ router.post('/ev-answer', function (req, res) {
     }
   
   })
+
+router.post('/submit-form', async (req, res) => {
+    console.log('You are on /submit-form'); // Log the request
+
+    // Populate formData with sample data
+    const formData = {
+        addressLine1: "hardcode1",
+        postcode: "hardcode2",
+        fullName: "hardcode3",
+        vehicleRegistrationNumber: "hardcode4",
+        emailAddress: "hardcode5@outlook.com"
+    };
+
+    try {
+        // Post data to the API
+        const response = await fetch('http://localhost:5051/application/submit-form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        console.log(response.status); // Log the response status
+        console.log(await response.text()); // Log the response body
+
+        if (response.ok) {
+            res.redirect('/confirmation'); // Redirect to confirmation page
+        } else {
+            console.error('Failed to submit the form');
+            res.status(400).send('Error submitting the form.');
+        }
+    } catch (error) {
+        console.error('Network error:', error);
+        res.status(500).send('Error submitting the form. Please try again later.');
+    }
+});
