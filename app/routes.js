@@ -29,11 +29,11 @@ router.post('/submit-form', async (req, res) => {
 
     // Populate formData with sample data
     const formData = {
-        addressLine1: "hardcode1",
-        postcode: "hardcode2",
-        fullName: "hardcode3",
-        vehicleRegistrationNumber: "hardcode4",
-        emailAddress: "hardcode5@outlook.com"
+        addressLine1: req.session.data['addressLine1'],
+        postcode: req.session.data['addressPostcode'],
+        fullName: req.session.data['fullName'],
+        vehicleRegistrationNumber: req.session.data['vehicleRegistrationNumber'],
+        emailAddress: req.session.data['email'],
     };
 
     try {
