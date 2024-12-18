@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvChargingApp", "EvChargingApp\EvChargingApp.csproj", "{F55065D2-846D-492F-8EA5-C8BA03D2F331}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvChargingApp.Tests", "EvChargingApp.Tests\EvChargingApp.Tests.csproj", "{681953BD-4CDE-48B7-B0B5-A3BEF4DAC8C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F55065D2-846D-492F-8EA5-C8BA03D2F331}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55065D2-846D-492F-8EA5-C8BA03D2F331}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F55065D2-846D-492F-8EA5-C8BA03D2F331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681953BD-4CDE-48B7-B0B5-A3BEF4DAC8C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681953BD-4CDE-48B7-B0B5-A3BEF4DAC8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681953BD-4CDE-48B7-B0B5-A3BEF4DAC8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681953BD-4CDE-48B7-B0B5-A3BEF4DAC8C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

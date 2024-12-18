@@ -28,9 +28,16 @@ EvChargingApp/**/*.sourcelink.json
 !EvChargingApp/**/*.csproj
 !EvChargingApp/**/*.http
 
-# General ignores
-.DS_Store
-.idea/
-node_modules/
+# Ignore Debug build artifacts
+EvChargingApp.Tests/bin/
+EvChargingApp.Tests/obj/
+EvChargingApp.Tests/**/*.dll
+EvChargingApp.Tests/**/*.pdb
+EvChargingApp.Tests/**/*.cache
+EvChargingApp.Tests/**/*.sourcelink.json
 
+# Allow source files
+!EvChargingApp.Tests/**/*.cs
+!EvChargingApp.Tests/**/*.csproj
+!EvChargingApp.Tests/**/*.http
 
