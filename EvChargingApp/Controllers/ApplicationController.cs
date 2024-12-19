@@ -1,3 +1,5 @@
+namespace EvChargingApp.Controllers
+{
 using Microsoft.AspNetCore.Mvc;
 using EvChargingApp.Models; 
 using System.Linq; 
@@ -66,4 +68,5 @@ public class ApplicationController : ControllerBase
 
         return Ok($"Application with ID {id} has been deleted.");
     }
+}
 }
