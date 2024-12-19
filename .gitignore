@@ -11,9 +11,6 @@ usage-data-config.json
 .DS_Store
 .idea
 
-# Ignore database files
-EvChargingApp/*.db
-EvChargingApp/*.db-*
 
 # Ignore Debug build artifacts
 EvChargingApp/bin/
