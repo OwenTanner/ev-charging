@@ -14,10 +14,11 @@ RUN dotnet publish -c Release -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app .
-COPY applications.db /app/applications.db
+COPY applications.db /app/
 
 # Expose the backend port
 EXPOSE 5051
 
-# Command to run the backend
+# Command to run the backend (dotnet app entry point)
 ENTRYPOINT ["dotnet", "EvChargingApp.dll"]
+
