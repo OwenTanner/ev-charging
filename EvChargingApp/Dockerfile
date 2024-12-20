@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
 # Copy the project files
-COPY *.csproj .
+COPY EvChargingApp.csproj .
 RUN dotnet restore
 
 # Copy everything else and build the app

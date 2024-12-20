@@ -21,6 +21,7 @@ builder.Services.AddCors(options =>
                    .AllowAnyMethod();
     });
 });
+builder.WebHost.UseUrls("http://*:5051");
 
 var app = builder.Build();
 
