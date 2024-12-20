@@ -1,6 +1,8 @@
+namespace EvChargingApp.Controllers
+{
 using Microsoft.AspNetCore.Mvc;
-using EvChargingApp.Models; // Namespace for your models
-using System.Linq; // Required for querying the database
+using EvChargingApp.Models; 
+using System.Linq; 
 
 [ApiController]
 [Route("[controller]")]
@@ -66,4 +68,5 @@ public class ApplicationController : ControllerBase
 
         return Ok($"Application with ID {id} has been deleted.");
     }
+}
 }
