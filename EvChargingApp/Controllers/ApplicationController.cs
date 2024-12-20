@@ -15,19 +15,34 @@ public class ApplicationController : ControllerBase
         _context = context;
     }
 
-    [HttpPost("submit-form")]
-    public IActionResult SubmitForm([FromBody] ApplicationData formData)
+   [HttpPost("submit-form")]
+public IActionResult SubmitForm([FromBody] ApplicationData formData)
+{
+    Console.WriteLine("Received a request to submit the form.");
+
+    if (formData == null)
     {
-        if (formData == null)
-        {
-            return BadRequest("Invalid form data.");
-        }
+        Console.WriteLine("Form data is null.");
+        return BadRequest("Invalid form data.");
+    }
+
+    try
+    {
+        Console.WriteLine($"Form Data: {formData.FullName}, {formData.AddressLine1}"); // Log some fields to verify data
 
         _context.Applications.Add(formData);
         _context.SaveChanges();
 
         return Ok("Form submitted successfully!");
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error in SubmitForm: {ex.Message}");
+        Console.WriteLine(ex.StackTrace);
+        return StatusCode(500, "An error occurred while submitting the form.");
+    }
+}
+
 
     // Get all applications
     [HttpGet("get-all")]

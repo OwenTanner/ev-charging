@@ -38,7 +38,7 @@ router.post('/submit-form', async (req, res) => {
 
     try {
         // Post data to the API
-        const response = await fetch('http://localhost:5051/application/submit-form', {
+        const response = await fetch('http://backend-container:5051/application/submit-form', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
