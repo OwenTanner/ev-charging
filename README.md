@@ -78,12 +78,16 @@ docker ps
 
 1. Open your browser and go to `http://localhost:3000`.
 2. Submit a form and check if the **confirmation page** appears.
-3. To verify if the data has been inserted into the database, run the following command to check the database inside the backend container:
+3. To verify if the data has been inserted into the database, run the following command to check the database inside the backend container (EvChargingApp):
     ```bash
     docker exec -it backend-container sh
     sqlite3 /app/applications.db
     SELECT * FROM Applications;
     ```
+4. Alternatively (again within EVChargingApp) run the following to clone in the database so that you can view it.
+   ```bash
+    docker cp backend-container:/app/applications.db ./applications.db
+   ```
 
 ### Step 7: Clean Up After Testing
 
