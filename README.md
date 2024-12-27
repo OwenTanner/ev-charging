@@ -125,7 +125,7 @@ This will start the frontend on `http://localhost:3000`.
 
 This will start the backend on `http://localhost:5051`.
 
-### Step 3: Test the Application Locally
+### Step 3: Test the Application
 
 1. Open your browser and go to `http://localhost:3000` to access the frontend.
 2. Submit a form and check if the **confirmation page** appears.
@@ -134,7 +134,10 @@ This will start the backend on `http://localhost:5051`.
     sqlite3 applications.db
     SELECT * FROM Applications;
     ```
-
+4. Alternatively, running the following command will copy the database into the working directory.
+   ```bash
+   docker cp backend-container:/app/applications.db ./applications.db
+   ```
 ---
 
 ## Summary of Key Commands
