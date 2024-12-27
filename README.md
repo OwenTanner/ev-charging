@@ -20,6 +20,12 @@ The backend includes **5 unit tests** that verify core functionality, ensuring t
 
 ## Running the Project in Docker
 
+### Step 0: Clear docker. 
+Run the following in order to clean away previous docker images. 
+```bash
+docker system prune
+```
+
 ### Step 1: Build the Docker Images
 
 Start by rebuilding the Docker images for both the backend and frontend:
