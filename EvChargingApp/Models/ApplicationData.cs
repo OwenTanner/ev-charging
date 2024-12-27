@@ -5,7 +5,7 @@ namespace EvChargingApp.Models
     public class ApplicationData
     {
         [Key]
-        public int Id { get; set; } // Primary key
+        public int Id { get; set; } 
 
         [Required]
         [MaxLength(255)]

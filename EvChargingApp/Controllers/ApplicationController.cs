@@ -14,8 +14,8 @@ public class ApplicationController : ControllerBase
     {
         _context = context;
     }
-
-   [HttpPost("submit-form")]
+    //submit form
+    [HttpPost("submit-form")]
 public IActionResult SubmitForm([FromBody] ApplicationData formData)
 {
     Console.WriteLine("Received a request to submit the form.");
@@ -28,7 +28,7 @@ public IActionResult SubmitForm([FromBody] ApplicationData formData)
 
     try
     {
-        Console.WriteLine($"Form Data: {formData.FullName}, {formData.AddressLine1}"); // Log some fields to verify data
+        Console.WriteLine($"Form Data: {formData.FullName}, {formData.AddressLine1}"); 
 
         _context.Applications.Add(formData);
         _context.SaveChanges();
@@ -49,7 +49,7 @@ public IActionResult SubmitForm([FromBody] ApplicationData formData)
     public IActionResult GetAll()
     {
         var applications = _context.Applications.ToList();
-        return Ok(applications); // Returns data as JSON
+        return Ok(applications); 
     }
 
     // Delete all applications

@@ -10,19 +10,15 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 router.post('/ev-answer', function (req, res) {
 
-    // Make a variable and give it the value from 'how-many-balls'
+    
     var regNo = req.session.data['vehicleRegistrationNumber']
-  
-    // Check whether the variable matches a condition
+    
     if (regNo == "ABC"){
-      // Send user to next page
-      res.redirect('/deniedev')
+    res.redirect('/deniedev')
     } else {
-      // Send user to ineligible page
-      res.redirect('/your-email-address')
+    res.redirect('/your-email-address')
     }
-  
-  })
+})
 
 router.post('/submit-form', async (req, res) => {
     console.log('You are on /submit-form'); // Log the request
@@ -37,18 +33,18 @@ router.post('/submit-form', async (req, res) => {
     };
 
     try {
-        // Post data to the API
+        
         const response = await fetch('http://backend-container:5051/application/submit-form', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         });
 
-        console.log(response.status); // Log the response status
-        console.log(await response.text()); // Log the response body
+        console.log(response.status); 
+        console.log(await response.text()); 
 
         if (response.ok) {
-            res.redirect('/confirmation'); // Redirect to confirmation page
+            res.redirect('/confirmation'); 
         } else {
             console.error('Failed to submit the form');
             res.status(400).send('Error submitting the form.');
