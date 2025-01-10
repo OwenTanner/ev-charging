@@ -144,10 +144,6 @@ This will start the backend on `http://localhost:5051`.
     sqlite3 applications.db
     SELECT * FROM Applications;
     ```
-4. Alternatively, running the following command will copy the database into the working directory.
-   ```bash
-   docker cp backend-container:/app/applications.db ./applications.db
-   ```
 ---
 
 ## Summary of Key Commands
